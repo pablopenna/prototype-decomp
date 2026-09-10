@@ -8,7 +8,6 @@
 // Optional script argument: annotations directory (default: <repo>/annotations).
 //@category Prototype
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -58,9 +57,10 @@ public class ApplyAnnotations extends GhidraScript {
 	}
 
 	private Path defaultAnnotationsDir() {
-		// This file is <repo>/tools/ghidra/ApplyAnnotations.java.
-		File repo = getSourceFile().getParentFile().getParentFile().getParentFile().getFile(false);
-		return repo.toPath().resolve("annotations");
+		// The project lives in <repo>/ghidra. Derived from the project rather than from this
+		// file's location because the MCP plugin may run a copy of the script from elsewhere.
+		Path projectDir = Path.of(getState().getProject().getProjectLocator().getLocation());
+		return projectDir.getParent().resolve("annotations");
 	}
 
 	private int applyTypes(Path dir) throws Exception {

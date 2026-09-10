@@ -14,7 +14,8 @@ ENGINE_DLL=prototypeenginef.dll
 ENGINE_DLL_SHA256=d331be205bdde99897952ee88261ab7e63c5c65e36a4660e2a367886a3537071
 PROJECT_DIR=$REPO_ROOT/ghidra
 PROJECT_NAME=Prototype
-GHIDRA_SCRIPTS=$REPO_ROOT/tools/ghidra
+# <repo>/ghidra_scripts is also one of the folders the GhidraMCP plugin searches by name.
+GHIDRA_SCRIPTS=$REPO_ROOT/ghidra_scripts
 # Headless Ghidra defaults to a 2G heap, which is tight for a 14 MB .text.
 export GHIDRA_HEADLESS_MAXMEM=${GHIDRA_HEADLESS_MAXMEM:-8G}
 

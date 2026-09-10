@@ -66,5 +66,5 @@ Setup done. One-time steps in the Ghidra GUI (start it with: mise run ghidra):
   1. Open prototypeenginef.dll in CodeBrowser (answer "No" if asked to analyze).
   2. File > Configure > Configure All Plugins: enable GhidraMCP.
   3. Tools > GhidraMCP > Start MCP Server.
-  4. Window > Script Manager > Manage Script Directories: add <repo>/tools/ghidra.
+  4. Window > Script Manager > Manage Script Directories: add <repo>/ghidra_scripts.
 EOF
