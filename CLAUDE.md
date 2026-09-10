@@ -9,8 +9,11 @@ what is specific to working here as an AI agent.
 
 - Read the whole README first. Most of what looks like an open decision is already decided
   under "Why this and not the alternatives" — don't relitigate it.
-- Check "Current status" and "Findings about the binary" for where things stand, and update
-  them in the README when that changes.
+- Read `STATE.md`: it records where the last session stopped — findings not yet in Ghidra,
+  the current plan, and what is unverified. Resume from its plan unless the owner says
+  otherwise, and keep it up to date as work progresses.
+- Check "Current status" and "Findings about the binary" in the README too, and update them
+  when that changes.
 
 ## Working with the owner
 

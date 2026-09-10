@@ -18,7 +18,8 @@ finished port. Progress being visible and continuous matters more than progress 
   in git as text under `annotations/`.
 - The unmodified game runs under Proton (see [Paths and machine notes](#paths-and-machine-notes)).
 
-Next step: survey the recovered RTTI classes and pick a first subsystem.
+Where the work stands in detail — findings, the current plan, open questions — is in
+[STATE.md](STATE.md).
 
 ## Approach
 
