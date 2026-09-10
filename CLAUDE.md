@@ -98,7 +98,13 @@ Paths to record here once known (not yet established):
 - Game install directory: `PROTOTYPE_GAME_DIR` in `.env` (gitignored, machine-specific; copy
   `template.env` to create it). Steam build (app id 10150, Flatpak Steam on this machine).
   Code lives in `prototypef.exe` (2.4 MB) and `prototypeenginef.dll` (20 MB).
-- Proton prefix: `$PROTOTYPE_GAME_DIR/../../compatdata/10150/pfx`
+- Proton prefix: `$PROTOTYPE_GAME_DIR/../../compatdata/10150/pfx`. The unmodified game runs
+  under **Proton Hotfix 11.0-100** (verified 2026-09-10, launched from Steam). That run is
+  the behavioral baseline; if the Proton version changes, re-check the vanilla game before
+  blaming a hooked function.
+- Save games: `<prefix>/drive_c/users/steamuser/Documents/Prototype/slot-*.bin` (i.e.
+  `C:\users\steamuser\Documents\Prototype` inside Wine). Not synced by Steam Cloud. Never
+  commit save files.
 - Ghidra project location: `ghidra/Prototype.gpr` (+ `ghidra/Prototype.rep/`) inside this
   repo, **gitignored** — its `.rep/` database embeds a full copy of the imported game binary.
   Open it in the GUI (File → Open Project) so the MCP sees it.
