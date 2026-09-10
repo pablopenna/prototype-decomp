@@ -1,0 +1,11 @@
+# Ghidra project: its .rep/ database embeds a full copy of every imported binary.
+/ghidra/
+
+# Never commit game binaries (see "Hard constraints" in CLAUDE.md).
+*.exe
+*.dll
+
+/build/
+
+# Machine-specific paths; template.env is the committed template.
+.env

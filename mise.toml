@@ -1,0 +1,23 @@
+[tools]
+java = "21.0.2" # Ghidra 12.1 requires JDK 21
+uv = "0.11.7"   # runs the Ghidra MCP bridge (.mcp.json)
+
+[env]
+_.file = ".env"
+
+[tasks.setup]
+description = "Set up this machine: GhidraMCP plugin, Ghidra project, import + analysis, annotations"
+run = "bash tools/setup.sh"
+
+[tasks.ghidra]
+description = "Launch the Ghidra GUI on the project (MCP script execution enabled)"
+env = { GHIDRA_MCP_ALLOW_SCRIPTS = "1" }
+run = '"$GHIDRA_INSTALL_DIR/ghidraRun" "$MISE_PROJECT_ROOT/ghidra/Prototype.gpr"'
+
+[tasks.export]
+description = "Write annotations from the Ghidra project to annotations/ (Ghidra closed)"
+run = "bash tools/ghidra-headless.sh export"
+
+[tasks.apply]
+description = "Apply annotations/ from git to the Ghidra project (Ghidra closed)"
+run = "bash tools/ghidra-headless.sh apply"
